@@ -1,4 +1,4 @@
-package com.fges.rizomm.m1.bakery;
+package com.fges.rizomm.m1.bakery.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -10,8 +10,8 @@ import com.fges.rizomm.m1.bakery.dao.ProduitRepository;
 @SpringBootApplication
 public class DemoSpringLoginApplication {
 	
-	@Autowired
-	private ProduitRepository pr;
+	/*@Autowired
+	private ProduitRepository pr;*/
 	
 	public static void main(String[] args) {
 		SpringApplication.run(DemoSpringLoginApplication.class, args);

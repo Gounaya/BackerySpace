@@ -1,4 +1,4 @@
-package com.fges.rizomm.m1.bakery;
+package com.fges.rizomm.m1.bakery.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

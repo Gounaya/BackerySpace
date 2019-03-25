@@ -28,12 +28,7 @@ public class Produit {
 	private boolean selected; // si l'attribut est séléctionné par l'admin pour l'afficher en page d'accueil
 	private String photo;
 	private int quantite; // qte dispo dans le stock
-	
-	@ManyToOne
-	@JoinColumn(name="idCategorie")
-	private Categorie categorie;
-	
-	
+
 	public Produit() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -105,14 +100,4 @@ public class Produit {
 		this.quantite = quantite;
 	}
 
-	public Categorie getCategorie() {
-		return categorie;
-	}
-
-	public void setCategorie(Categorie categorie) {
-		this.categorie = categorie;
-	}
-	
-	
-	
 }
