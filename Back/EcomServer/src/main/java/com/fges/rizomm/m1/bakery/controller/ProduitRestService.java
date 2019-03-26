@@ -18,7 +18,7 @@ import com.fges.rizomm.m1.bakery.dao.ProduitRepository;
 import com.fges.rizomm.m1.bakery.entites.Produit;
 
 @RestController
-public class ProduitRestService {
+public class 	ProduitRestService {
 	
 	@Autowired
 	private ProduitRepository produitRepository;
