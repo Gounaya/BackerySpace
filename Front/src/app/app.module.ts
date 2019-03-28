@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { ProduitsComponent } from './produits/produits.component';
 import { FooterComponent } from './footer/footer.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+// tslint:disable-next-line: deprecation
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

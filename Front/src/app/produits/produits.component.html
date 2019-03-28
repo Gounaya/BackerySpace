@@ -1,3 +1,57 @@
-<p>
-  produits works!
-</p>
+<!-- Grid row -->
+<div class="row">
+
+    <!-- Grid column -->
+    <div class="col-lg-4 col-md-12">
+
+        <!--Card Wider-->
+        <div class="card card-cascade wider">
+
+            <!--Card image-->
+            <div class="view view-cascade overlay" *ngFor="let item of produits">
+                <a href="#" ng-click=logout()><img src={{item.photo}} class="card-img-top" alt="wider"></a>
+                <div class="mask rgba-white-slight"></div>
+                <!--/Card image-->
+
+                <!--Card content-->
+                <div class="card-body card-body-cascade text-center">
+                    <!--Title-->
+                    <h4 class="card-title"><strong>{{item.description}}</strong></h4>
+                    <h5 class="indigo-text"><strong>{{item.prix}} $</strong></h5>
+
+                    <p class="card-text">{{item.designation}}</p>
+
+                </div>
+
+
+            </div>
+            <!--/.Card content-->
+
+        </div>
+        <!--/.Card Wider-->
+
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+
+    <!--/.Card image-->
+
+    <!-- Grid column -->
+    <div class="col-lg-4 col-md-6">
+
+        <!--Card Regular-->
+
+        <!--/.Card image-->
+
+        <!--Card content-->
+
+        <!--/.Card content-->
+
+    </div>
+    <!--/.Card Regular-->
+
+</div>
+<!-- Grid column -->
+
+<!-- Grid row -->
