@@ -2,7 +2,7 @@
 <div class="row">
 
     <!-- Grid column -->
-    <div class="col-lg-4 col-md-12">
+    <div class="col-lg-4">
 
         <!--Card Wider-->
         <div class="card card-cascade wider">
@@ -10,7 +10,6 @@
             <!--Card image-->
             <div class="view view-cascade overlay" *ngFor="let item of produits">
                 <a href="#" ng-click=logout()><img src={{item.photo}} class="card-img-top" alt="wider"></a>
-                <div class="mask rgba-white-slight"></div>
                 <!--/Card image-->
 
                 <!--Card content-->
@@ -22,15 +21,14 @@
                     <p class="card-text">{{item.description}}</p>
 
                 </div>
-
-
-
+              <div class="product__button-wrap">
+                <button (click)="AddProduct(product)" class="btn-primary">Add to cart
+                </button>
+              </div>
+              <div class="gap"></div>
             </div>
             <!--/.Card content-->
-          <div class="product__button-wrap">
-            <button (click)="AddProduct(product)" class="btn-primary">Add to cart
-            </button>
-          </div>
+
 
         </div>
         <!--/.Card Wider-->

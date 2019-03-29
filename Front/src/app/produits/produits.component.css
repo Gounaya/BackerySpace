@@ -8,12 +8,20 @@ div {
 }
 
 .list-inline-item:not(:last-child) {
-    margin-right: 0px;
     width: 100%;
+    display:block;
+    height: auto;
+    padding:4px;
+    margin-bottom:20px;
 }
 
 .btn-primary{
   color:#fff;
   background-color:#53301c;
   border-color:#357ebd;
-  width: 15.6em}
+  width: 15.6em
+}
+
+.gap{
+  margin-bottom: 20px;
+}
