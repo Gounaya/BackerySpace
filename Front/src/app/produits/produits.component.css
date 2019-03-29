@@ -1,0 +1,13 @@
+img {
+    height: 100%;
+    width: 100%;
+}
+
+div {
+    width: 100%;
+}
+
+.list-inline-item:not(:last-child) {
+    margin-right: 0px;
+    width: 100%;
+}
