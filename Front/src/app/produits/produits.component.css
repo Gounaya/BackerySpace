@@ -11,3 +11,9 @@ div {
     margin-right: 0px;
     width: 100%;
 }
+
+.btn-primary{
+  color:#fff;
+  background-color:#53301c;
+  border-color:#357ebd;
+  width: 15.6em}
