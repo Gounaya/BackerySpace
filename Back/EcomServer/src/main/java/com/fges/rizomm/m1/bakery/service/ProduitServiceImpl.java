@@ -5,6 +5,9 @@ import com.fges.rizomm.m1.bakery.entites.Produit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,6 +15,9 @@ import java.util.Optional;
 public class ProduitServiceImpl implements ProduitService {
 
     private final ProduitRepository produitRepository;
+
+    @PersistenceContext
+    private EntityManager em;
 
     @Autowired
     public ProduitServiceImpl(ProduitRepository produitRepository){
@@ -54,4 +60,11 @@ public class ProduitServiceImpl implements ProduitService {
     public Produit update(Produit produit) {
        return produitRepository.save(produit);
     }
+
+    @Override
+    public Produit getProductHero() {
+        return produitRepository.getHero();
+    }
+
+
 }

@@ -16,4 +16,6 @@ public interface ProduitService {
     List<Produit> findAll();
 
     Produit update(Produit product);
+
+    Produit getProductHero();
 }

@@ -45,12 +45,13 @@ public class ProduitRestService {
 	}
 
 	@PostMapping(value="/produits")
-	public Produit saveProduit(@RequestBody Produit p)
-	{
+		public Produit saveProduit(@RequestBody Produit p)
+		{
 
-		return produitService.update(p);
+			return produitService.update(p);
 	}
-	
+
+
 	/*@PutMapping(value="/produits/{id}")
 	public Produit updateProduit(@PathVariable Long id, @RequestBody Produit p)
 	{
@@ -58,6 +59,9 @@ public class ProduitRestService {
 		return produitRepository.save(p);
 	}*/
 
-
+	@GetMapping(value="/produitHero")
+	public Produit getHero() {
+		return produitService.getProductHero();
+	}
 
 }
