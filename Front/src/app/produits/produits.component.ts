@@ -18,9 +18,11 @@ this.produitService.getAllProduits()
   console.log('error');
 });
 
-
-
-
   }
+
+  description() {
+    alert('ok');
+  }
+
 
 }

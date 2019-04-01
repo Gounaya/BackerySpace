@@ -13,4 +13,5 @@ export class ProduitsService {
   getAllProduits() {
     return this.http.get(this.host + '/produits');
   }
+
 }
