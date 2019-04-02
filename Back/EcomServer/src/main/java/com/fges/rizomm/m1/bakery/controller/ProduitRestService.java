@@ -3,6 +3,8 @@ package com.fges.rizomm.m1.bakery.controller;
 import java.util.List;
 import java.util.Optional;
 
+import com.fges.rizomm.m1.bakery.service.ProduitService;
+import com.fges.rizomm.m1.bakery.service.ProduitServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,39 +23,45 @@ import com.fges.rizomm.m1.bakery.entites.Produit;
 public class ProduitRestService {
 	
 	@Autowired
-	private ProduitRepository produitRepository;
+	private ProduitService produitService;
 	
 	@GetMapping(value="/produits")
 	public List<Produit> getProduits()
 	{
-		return produitRepository.findAll();
+		return produitService.findAll();
 	}
 	
 	@GetMapping(value="/produits/{id}")
 	public Optional<Produit> getProduit(@PathVariable Long id)
 	{
-		return produitRepository.findById(id);
-	}
-	
-	@PostMapping(value="/produits")
-	public Produit saveProduit(@RequestBody Produit p)
-	{
-		return produitRepository.save(p);
+		return produitService.find(id);
 	}
 	
 	@DeleteMapping(value="/produits/{id}")
 	public void deleteProduit(@PathVariable Long id)
 	{
-		produitRepository.deleteById(id);
+
+		produitService.delete(id);
 	}
-	
-	@PutMapping(value="/produits/{id}")
+
+	@PostMapping(value="/produits")
+		public Produit saveProduit(@RequestBody Produit p)
+		{
+
+			return produitService.update(p);
+	}
+
+
+	/*@PutMapping(value="/produits/{id}")
 	public Produit updateProduit(@PathVariable Long id, @RequestBody Produit p)
 	{
 		p.setIdProduit(id);
 		return produitRepository.save(p);
+	}*/
+
+	@GetMapping(value="/produitHero")
+	public Produit getHero() {
+		return produitService.getProductHero();
 	}
-
-
 
 }

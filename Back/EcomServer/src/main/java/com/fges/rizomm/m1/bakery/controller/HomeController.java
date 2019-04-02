@@ -13,6 +13,5 @@ public class HomeController {
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("welcome"); // resources/template/welcome.html
 		return modelAndView;
-		
 	}
 }

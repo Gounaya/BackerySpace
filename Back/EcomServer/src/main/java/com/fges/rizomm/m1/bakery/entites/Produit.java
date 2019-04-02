@@ -22,7 +22,7 @@ public class Produit {
 	@NotEmpty
 	@Size(min=4, max=15)
 	private String designation;
-	
+	@Size(min=4, max=255)
 	private String description;
 	private double prix;
 	private boolean selected; // si l'attribut est séléctionné par l'admin pour l'afficher en page d'accueil
