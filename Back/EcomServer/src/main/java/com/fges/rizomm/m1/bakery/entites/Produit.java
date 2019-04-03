@@ -1,6 +1,8 @@
 package com.fges.rizomm.m1.bakery.entites;
 
 
+import org.springframework.context.annotation.Scope;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

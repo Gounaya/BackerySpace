@@ -32,7 +32,6 @@ public class CartServiceImpl implements CartService {
 
         if (this.produits.containsKey(produit)) {
             this.produits.replace(produit, this.produits.get(produit) + 1);
-            System.out.println("Dodano produit");
         } else {
             this.produits.put(produit, 1);
         }
@@ -65,5 +64,6 @@ public class CartServiceImpl implements CartService {
         }
         return totalPrice;
     }
+
 
 }
