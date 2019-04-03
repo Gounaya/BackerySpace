@@ -1,0 +1,28 @@
+<!--<app-home [data]="details"></app-home>-->
+
+
+
+
+
+
+<div *ngIf="details" class="products">
+
+    <a routerLink="/produits/{{details.idProduit}}">
+
+        <img src={{details.photo}}>
+
+    </a>
+
+    <!--span class="product-new-label">Sale</span>
+<span class="product-discount-label">20%</span>-->
+</div>
+<ul class="rating">
+
+</ul>
+<div class="product-content">
+    <h3 class="title"><a href="#">{{details.description}}</a></h3>
+    <div class="price">{{details.prix}} €
+        <a routerLink="/cart" class="add-to-cart" href="">+ Ajouter au panier</a>
+        <div>
+            <h3>{{details.designation}}</h3>
+        </div>

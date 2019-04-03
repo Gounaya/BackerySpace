@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import'rxjs/Rx';
@@ -10,13 +10,13 @@ import'rxjs/Rx';
 })
 export class HomeComponent implements OnInit {
 
-  data : any={};
+  @Input() data : any;
   constructor( private http: HttpClient){
     console.log('uuuu');
     this.ngOnInit();
   }
   title = 'Client';
-  
+
   ngOnInit(){
     this.http.get('http://127.0.0.1:8886/produitHero').subscribe(data => {
       console.log(data);

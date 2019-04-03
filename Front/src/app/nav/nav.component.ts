@@ -8,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class NavComponent implements OnInit {
   apptitle = 'BakerySpace';
   constructor() { }
+  navbarOpen = false;
 
-  ngOnInit() {
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
   }
+  ngOnInit() {
 
+  }
 }

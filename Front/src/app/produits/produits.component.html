@@ -1,8 +1,13 @@
+<h2>DECOUVREZ VOS MEILLEURS PATISSERIES
+    <hr>
+</h2>
+
 <div class="row">
+
     <div class="col-md-3 col-sm-6" *ngFor="let item of produits">
         <div class="product-grid">
             <div class="product-image">
-                <a (click)="description()">
+                <a routerLink="/produits/{{item.idProduit}}">
 
                     <img src={{item.photo}}>
 
@@ -19,11 +24,11 @@
                 <li class="fa fa-star disable"></li>
             </ul>
             <div class="product-content">
-                <h3 class="title"><a href="#">{{item.description}}</a></h3>
+                <h3 class="title"><a href="#">{{item.designation}}</a></h3>
                 <div class="price">{{item.prix}} €
                     <!--<span>$20.00</span>-->
                 </div>
-                <a class="add-to-cart" href="">+ Ajouter au panier</a>
+                <!--<a routerLink="/produits/{{item.id}}" class="add-to-cart" href="">+ Ajouter au panier</a>-->
             </div>
         </div>
     </div>
