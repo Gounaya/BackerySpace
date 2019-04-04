@@ -1,18 +1,5 @@
-<!--<app-home [data]="details"></app-home>-->
-
-
-
-
-
-
 <div *ngIf="details" class="products">
-
-    <a routerLink="/produits/{{details.idProduit}}">
-
-        <img src={{details.photo}}>
-
-    </a>
-
+    <img src={{details.photo}}>
     <!--span class="product-new-label">Sale</span>
 <span class="product-discount-label">20%</span>-->
 </div>
@@ -20,9 +7,14 @@
 
 </ul>
 <div class="product-content">
-    <h3 class="title"><a href="#">{{details.description}}</a></h3>
-    <div class="price">{{details.prix}} €
-        <a routerLink="/cart" class="add-to-cart" href="">+ Ajouter au panier</a>
-        <div>
-            <h3>{{details.designation}}</h3>
-        </div>
+    <h3 class="title">{{details.description}}</h3>
+
+    <a routerLink="/cart" class="add-to-cart" href="">+ Ajouter au panier</a>
+    <div>
+    </div>
+    <div class="product-content">
+
+        <div class="price">{{details.prix}} €
+            <div>
+                <h3>{{details.designation}}</h3>
+            </div>
