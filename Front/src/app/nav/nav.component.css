@@ -4,4 +4,23 @@
 
 a.logo {
     color: white;
+    font-family: 'Anton', sans-serif;
+    font-size: 2em;
+}
+
+a.logo:link {
+    text-decoration: none;
+}
+
+.navbar-nav {
+    margin-left: 70%;
+}
+
+.nav-item {
+    margin-right: 10px;
+    font-family: 'Anton', sans-serif;
+}
+
+hr {
+    padding-top: 5px;
 }

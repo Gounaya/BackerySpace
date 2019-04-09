@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { ProduitsService } from './../produits.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -12,7 +11,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ProduitsDetailsComponent implements OnInit {
 
   details : any;
-  constructor(public rest:ProduitsService, private route: ActivatedRoute, private router: Router) { }
+  /**
+   *
+   * @param rest INJECTION DU SERVICE qui appel l'API pour recuperer les produits
+   * @param route INJECTION DE MODULE pour recuperer le fragment iD de l'url
+   */
+  constructor(public rest: ProduitsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.rest.getProduct(this.route.snapshot.params['id']).

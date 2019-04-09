@@ -1,20 +1,20 @@
-<div *ngIf="details" class="products">
-    <img src={{details.photo}}>
-    <!--span class="product-new-label">Sale</span>
-<span class="product-discount-label">20%</span>-->
-</div>
-<ul class="rating">
+<div class="card">
+    <img class="card-img" src="{{details.photo}}" alt="Vans">
+    <div class="card-img-overlay d-flex justify-content-end">
 
-</ul>
-<div class="product-content">
-    <h3 class="title">{{details.description}}</h3>
-
-    <a routerLink="/cart" class="add-to-cart" href="">+ Ajouter au panier</a>
-    <div>
     </div>
-    <div class="product-content">
+    <div class="card-body">
+        <h4 class="card-title">{{details.designation}}</h4>
+        <h6 class="card-subtitle mb-2 text-muted">{{details.description}}</h6>
+        <div class="options d-flex flex-fill">
 
-        <div class="price">{{details.prix}} €
-            <div>
-                <h3>{{details.designation}}</h3>
+
+        </div>
+        <div class="buy d-flex justify-content-between align-items-center">
+            <div class="price text-success">
+                <h5 class="mt-4">{{details.prix}}€</h5>
             </div>
+            <button type="button" routerLink="/cart" class="btn btn-danger mt-3">Ajouter au panier</button>
+
+        </div>
+    </div>

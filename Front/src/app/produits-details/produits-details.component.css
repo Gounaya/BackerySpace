@@ -3,8 +3,8 @@ div {
 }
 
 img {
-    height: 400px;
-    width: 990px;
+    height: 600px;
+    width: 100%;
     margin: auto;
 }
 
@@ -12,11 +12,20 @@ a {
     text-align: center;
 }
 
-.product-content {
+.price h5 {
+    color: rgba(236, 15, 15, 0.76);
+    font-weight: bold;
     text-align: center;
 }
 
-.price {
-    color: rgba(56, 9, 9, 0.76)!important;
-    font-weight: bold;
+.btn:active {
+    color: aqua;
+}
+
+div h6 {
+    text-align: center;
+}
+
+div h5 {
+    font-weight: 100;
 }

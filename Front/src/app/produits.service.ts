@@ -16,9 +16,16 @@ export class ProduitsService {
     return body || { };
   }
 
+  /**
+   * Cette methode appelle l'API et recupere tous les produits
+   */
   getAllProduits() {
     return this.http.get(this.host + '/produits');
   }
+
+  /**
+   * Cette methode appelle les ressources de l'API par Id de produit
+   */
 
   getProduct(id): Observable<any> {
     return this.http.get(this.host + '/produits/' + id).pipe(
