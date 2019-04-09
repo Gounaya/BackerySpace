@@ -1,6 +1,5 @@
 package com.fges.rizomm.m1.bakery.controller;
 
-import com.fges.rizomm.m1.bakery.entites.Item;
 import com.fges.rizomm.m1.bakery.entites.Produit;
 import com.fges.rizomm.m1.bakery.service.CartService;
 import com.fges.rizomm.m1.bakery.service.ProduitService;
@@ -12,12 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -36,20 +30,6 @@ public class CartController {
     @GetMapping("/info")
     public String myCart(Model model){
         return "mycart";
-    }
-
-
-    @GetMapping(value = "/{id}")
-    public String buy(@PathVariable Long id, ModelMap modelMap, HttpSession session) {
-        if(session.getAttribute("cart") == null)
-        {
-            List<Item> cart = new ArrayList<Item>();
-            cart.add(new Item(produitService.find(id).orElse(null), 1));
-        } else {
-
-        }
-
-    return "page";
     }
 
     @SuppressWarnings("Duplicates")
