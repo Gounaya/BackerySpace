@@ -1,0 +1,31 @@
+div {
+    width: 100%;
+}
+
+img {
+    height: 600px;
+    width: 100%;
+    margin: auto;
+}
+
+a {
+    text-align: center;
+}
+
+.price h5 {
+    color: rgba(236, 15, 15, 0.76);
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn:active {
+    color: aqua;
+}
+
+div h6 {
+    text-align: center;
+}
+
+div h5 {
+    font-weight: 100;
+}
