@@ -1,4 +1,6 @@
+import { ProduitsService } from './../produits.service';
 import { Component, OnInit } from '@angular/core';
+import { Produits } from '../models/Produits';
 
 @Component({
   selector: 'app-produits',
@@ -6,10 +8,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./produits.component.css']
 })
 export class ProduitsComponent implements OnInit {
+/**
+ *
+ * @param produitService Appel du service de l'API dans le composant
+ */
+  constructor(private produitService: ProduitsService) { }
 
-  constructor() { }
+  produits: any;
 
+/**
+ * Recuperation des ressources depuis l'API pour affichage
+ */
   ngOnInit() {
+this.produitService.getAllProduits()
+.subscribe(produits =>  {
+  this.produits = produits;
+}, err => {
+  console.log('error');
+});
+
   }
+
+
 
 }

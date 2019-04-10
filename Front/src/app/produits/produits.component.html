@@ -1,3 +1,31 @@
-<p>
-  produits works!
-</p>
+<h2>DECOUVREZ VOS PRODUITS</h2>
+<hr>
+
+<div class="row">
+
+    <div class="col-md-3 col-sm-6" *ngFor="let item of produits">
+        <div class="product-grid">
+            <div class="product-image">
+                <a routerLink="/produits/{{item.idProduit}}">
+
+                    <img src={{item.photo}}>
+
+                </a>
+
+
+            </div>
+            <ul class="rating">
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star disable"></li>
+            </ul>
+            <div class="product-content">
+                <h3 class="title"><a href="#">{{item.designation}}</a></h3>
+                <div class="price">
+                    <h4>{{item.prix}} €</h4>
+                </div>
+            </div>
+        </div>
+    </div>

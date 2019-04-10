@@ -1,31 +1,22 @@
-header {
-    background: #53301c;
+.bg-dark {
+    background-color: rgba(56, 9, 9, 0.76)!important;
 }
 
-header .logo {
-    font-weight: bold;
+a.logo {
+    color: white;
+    font-family: 'Anton', sans-serif;
+    font-size: 2em;
 }
 
-header nav {
-    justify-self: right;
+a.logo:link {
+    text-decoration: none;
 }
 
-header nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.navbar-nav {
+    margin-left: 70%;
 }
 
-header nav li {
-    float: left;
-}
-
-header nav li a {
-    padding: 1.5em;
-    text-transform: uppercase;
-    font-size: 0.8em;
-}
-
-header nav li a:hover {
-    background: #53301c;
+.nav-item {
+    margin-right: 10px;
+    font-family: 'Anton', sans-serif;
 }
