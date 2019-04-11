@@ -20,3 +20,8 @@ a.logo:link {
     margin-right: 10px;
     font-family: 'Anton', sans-serif;
 }
+
+img {
+    height: 120px;
+    width: 70px;
+}
