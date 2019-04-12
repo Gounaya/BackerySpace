@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { ProduitsService } from '../Services/produits.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Produits } from '../models/Produits';
+=======
+import { ProduitsService } from './../produits.service';
+import { ActivatedRoute, Router } from '@angular/router';
+>>>>>>> 067aa1661ffcac84e6f42fa21425fdd66efa0ede
 
 
 @Component({

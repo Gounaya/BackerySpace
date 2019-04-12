@@ -13,5 +13,7 @@ public interface CartService {
 
     Map<Produit, Integer> getProduitsInCart();
 
+    void removeAll();
+
     double getTotal();
 }

@@ -1,5 +1,6 @@
 div {
     width: 100%;
+<<<<<<< HEAD
     font-family: 'Anton', sans-serif;
 }
 
@@ -9,6 +10,8 @@ img {
     border-radius: 30px;
     margin-top: 30px;
     margin-bottom: 30px;
+=======
+>>>>>>> 067aa1661ffcac84e6f42fa21425fdd66efa0ede
 }
 
 .list-inline-item:not(:last-child) {
@@ -16,16 +19,23 @@ img {
     width: 100%;
 }
 
+<<<<<<< HEAD
 h2 {
     font-weight: bold;
     text-align: center;
     font-family: 'Anton', sans-serif;
     color: rgba(56, 9, 9, 0.76)!important
+=======
+h1 {
+    font-weight: bold;
+    text-align: center;
+>>>>>>> 067aa1661ffcac84e6f42fa21425fdd66efa0ede
 }
 
 button {
     border-radius: 90px;
     color: rgba(56, 9, 9, 0.76)!important
+<<<<<<< HEAD
 }
 
 h5 {
@@ -46,4 +56,6 @@ hr {
     border-style: solid;
     margin-bottom: 40px;
     color: rgba(56, 9, 9, 0.76)!important
+=======
+>>>>>>> 067aa1661ffcac84e6f42fa21425fdd66efa0ede
 }
