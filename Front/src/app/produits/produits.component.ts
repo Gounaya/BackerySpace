@@ -1,5 +1,5 @@
 import { ProduitsService } from '../Services/produits.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Produits } from '../models/Produits';
 
 @Component({
@@ -15,6 +15,7 @@ export class ProduitsComponent implements OnInit {
   constructor(private produitService: ProduitsService) { }
 
   produits: any;
+  @Input()quantity=0;
 
 /**
  * Recuperation des ressources depuis l'API pour affichage
@@ -27,6 +28,12 @@ this.produitService.getAllProduits()
   console.log('error');
 });
 
+  }
+
+  onClickProduct(){
+
+    this.quantity = this.quantity++;
+    console.log(this.quantity);
   }
 
 

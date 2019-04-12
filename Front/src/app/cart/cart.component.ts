@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { ProduitsService } from '../Services/produits.service';
-=======
-import { ProduitsService } from '../produits.service';
->>>>>>> 067aa1661ffcac84e6f42fa21425fdd66efa0ede
 
 @Component({
   selector: 'app-cart',
