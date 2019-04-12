@@ -1,16 +1,13 @@
-import { ProduitsService } from './../produits.service';
 import { Component, OnInit } from '@angular/core';
+import { ProduitsService } from '../produits.service';
 
 @Component({
-  selector: 'app-produits',
-  templateUrl: './produits.component.html',
-  styleUrls: ['./produits.component.css']
+  selector: 'app-cart',
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.css']
 })
-export class ProduitsComponent implements OnInit {
-/**
- *
- * @param produitService Appel du service de l'API dans le composant
- */
+export class CartComponent implements OnInit {
+
   constructor(private produitService: ProduitsService) { }
 
   produits: any;
@@ -26,8 +23,4 @@ this.produitService.getAllProduits()
   console.log('error');
 });
 
-  }
-
-
-
-}
+}}

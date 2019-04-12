@@ -1,60 +1,31 @@
-<!-- Grid row -->
+<h2>DECOUVREZ VOS PRODUITS</h2>
+<hr>
+
 <div class="row">
 
-    <!-- Grid column -->
-    <div class="col-lg-4">
+    <div class="col-md-3 col-sm-6" *ngFor="let item of produits">
+        <div class="product-grid">
+            <div class="product-image">
+                <a routerLink="/produits/{{item.idProduit}}">
 
-        <!--Card Wider-->
-        <div class="card card-cascade wider">
+                    <img src={{item.photo}}>
 
-            <!--Card image-->
-            <div class="view view-cascade overlay" *ngFor="let item of produits">
-                <a href="#" ng-click=logout()><img src={{item.photo}} class="card-img-top" alt="wider"></a>
-                <!--/Card image-->
+                </a>
 
-                <!--Card content-->
-                <div class="card-body card-body-cascade text-center">
-                    <!--Title-->
-                    <h4 class="card-title"><strong>{{item.designation}}</strong></h4>
-                    <h5 class="indigo-text"><strong>{{item.prix}} $</strong></h5>
 
-                    <p class="card-text">{{item.description}}</p>
-
-                </div>
-              <div class="product__button-wrap">
-                <button (click)="AddProduct(product)" class="btn-primary">Add to cart
-                </button>
-              </div>
-              <div class="gap"></div>
             </div>
-            <!--/.Card content-->
-
-
+            <ul class="rating">
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star disable"></li>
+            </ul>
+            <div class="product-content">
+                <h3 class="title"><a href="#">{{item.designation}}</a></h3>
+                <div class="price">
+                    <h4>{{item.prix}} €</h4>
+                </div>
+            </div>
         </div>
-        <!--/.Card Wider-->
-
     </div>
-    <!-- Grid column -->
-
-    <!-- Grid column -->
-
-    <!--/.Card image-->
-
-    <!-- Grid column -->
-    <div class="col-lg-4 col-md-6">
-
-        <!--Card Regular-->
-
-        <!--/.Card image-->
-
-        <!--Card content-->
-
-        <!--/.Card content-->
-
-    </div>
-    <!--/.Card Regular-->
-
-</div>
-<!-- Grid column -->
-
-<!-- Grid row -->

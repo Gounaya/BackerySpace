@@ -52,10 +52,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.antMatchers("/produits").permitAll()
 				.antMatchers("/produits/*").permitAll()
 				.antMatchers("/login").permitAll()
-				.antMatchers("/Cart").permitAll()
-				.antMatchers("/Carts/addProduct/*").permitAll()
-				.antMatchers("/Carts/removeProduct/*").permitAll()
+				.antMatchers("/register").permitAll()
 				.antMatchers("/home/**").hasAnyAuthority("SUPER_USER", "ADMIN_USER", "SITE_USER")
+				.antMatchers("/cart").permitAll()
+				.antMatchers("/cart/*").permitAll()
 				.antMatchers("/produitHero").permitAll()
 				.anyRequest().authenticated()
 				.and()
@@ -79,7 +79,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	public void configure(WebSecurity web) throws Exception {
 		web.ignoring().antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/images/**");
 	}
-
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurerAdapter() {

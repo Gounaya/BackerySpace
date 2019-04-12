@@ -1,0 +1,39 @@
+<table class="table" ng-show="cartData.length > 0">
+    <thead>
+        <tr>
+            <th>Produits</th>
+            <th>Prix</th>
+            <th>Quantite</th>
+            <th>Image</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in cartData">
+            <td>
+
+            </td>
+            <td>price</td>
+            <td>qte</td>
+            <td>
+                <div class="col-md-3 col-sm-6" *ngFor="let item of produits">
+                    <div class="product-grid">
+                        <div class="product-image">
+                            <a routerLink="/produits/{{item.idProduit}}">
+
+                                <img src={{item.photo}}>
+
+                            </a>
+
+                            <!--span class="product-new-label">Sale</span>
+                            <span class="product-discount-label">20%</span>-->
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <button>Retirer</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

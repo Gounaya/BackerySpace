@@ -2,52 +2,96 @@ package com.fges.rizomm.m1.bakery.controller;
 
 import com.fges.rizomm.m1.bakery.entites.Produit;
 import com.fges.rizomm.m1.bakery.service.CartService;
-import com.fges.rizomm.m1.bakery.service.CartServiceImpl;
 import com.fges.rizomm.m1.bakery.service.ProduitService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.*;
+import java.util.Map;
 
-import java.util.Optional;
 
 @Controller
+@RequestMapping("/cart")
 public class CartController {
 
-    private final CartService cartService;
 
-    private final ProduitService produitService;
+    private CartService cartService;
+
+    private ProduitService produitService;
 
     @Autowired
-    public CartController(CartService cartService, ProduitService produitService) {
+    public CartController(CartService cartService, ProduitService produitService)
+    {
         this.cartService = cartService;
         this.produitService = produitService;
     }
 
 
-    @GetMapping("/Cart")
-    public ModelAndView Cart(){
-        ModelAndView modelAndView = new ModelAndView("/Cart");
-        modelAndView.addObject("products", cartService.getProduitsInCart());
-        modelAndView.addObject("total", cartService.getTotal());
-        return modelAndView;
+    @SuppressWarnings("Duplicates")
+    @PostMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Map<Produit,Integer>> addProduitCart(@PathVariable Long id){
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json");
+
+        Produit Produit = produitService.find(id).orElse(null);
+
+        if(Produit == null){
+            return new ResponseEntity<>(headers, HttpStatus.NOT_FOUND);
+        }
+
+        cartService.addProduit(Produit);
+        Map<Produit,Integer> cart = cartService.getProduitsInCart();
+        return new ResponseEntity<>(cart, HttpStatus.OK);
     }
 
-    @PostMapping(value = "/Cart/addProduct/{idProduit}")
-    public ModelAndView addProductToCart(@PathVariable("idProduit") Long idProduit){
-        Produit product = produitService.find(idProduit).orElse(null);
-        cartService.addProduit(product);
-        return Cart();
+    @SuppressWarnings("Duplicates")
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Map<Produit, Integer>> findCart(){
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json");
+        Map<Produit,Integer> cart = cartService.getProduitsInCart();
+
+        if(cart == null){
+            return new ResponseEntity<>(headers, HttpStatus.NOT_FOUND);
+        }
+
+        return ResponseEntity.status(HttpStatus.OK).body(cart); // TODO : retun total
+
     }
 
-    @GetMapping("/Cart/removeProduct/{idProduit}")
-    public ModelAndView removeProductFromCart(@PathVariable("idProduit") Long idProduit) {
-        Produit product = produitService.find(idProduit).orElse(null);
-        cartService.removeProduit(product);
-        return Cart();
+    @SuppressWarnings("Duplicates")
+    @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Void> removeProduit(@PathVariable Long id){
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json");
+
+        Produit Produit = produitService.find(id).orElse(null);
+
+        if(Produit == null){
+            return new ResponseEntity<>(headers, HttpStatus.NOT_FOUND);
+        }
+        cartService.removeProduit(Produit);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
+    @SuppressWarnings("Duplicates")
+    @DeleteMapping(value = "/removeAll",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Void> removeAll(){
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json");
+
+        cartService.removeAll();
+
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }

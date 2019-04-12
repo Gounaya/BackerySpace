@@ -1,0 +1,20 @@
+<div class="card">
+    <img class="card-img" src="{{details.photo}}" alt="Vans">
+    <div class="card-img-overlay d-flex justify-content-end">
+
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">{{details.designation}}</h4>
+        <h6 class="card-subtitle mb-2 text-muted">{{details.description}}</h6>
+        <div class="options d-flex flex-fill">
+
+
+        </div>
+        <div class="buy d-flex justify-content-between align-items-center">
+            <div class="price text-success">
+                <h5 class="mt-4">{{details.prix}}€</h5>
+            </div>
+            <button type="button" routerLink="/cart" class="btn btn-danger mt-3">Ajouter au panier</button>
+
+        </div>
+    </div>

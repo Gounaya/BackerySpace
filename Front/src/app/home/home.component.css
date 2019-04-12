@@ -1,0 +1,18 @@
+div {
+    width: 100%;
+}
+
+.list-inline-item:not(:last-child) {
+    margin-right: 0px;
+    width: 100%;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center;
+}
+
+button {
+    border-radius: 90px;
+    color: rgba(56, 9, 9, 0.76)!important
+}
