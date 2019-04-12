@@ -1,10 +1,14 @@
 package com.fges.rizomm.m1.bakery.entites;
 
 
+import org.springframework.context.annotation.Scope;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
@@ -26,6 +30,10 @@ public class Produit {
 	private boolean selected; // si l'attribut est séléctionné par l'admin pour l'afficher en page d'accueil
 	private String photo;
 	private int quantite; // qte dispo dans le stock
+	
+	@ManyToOne
+	@JoinColumn(name="idCategorie")
+	private Categorie categorie;
 	
 	
 	public Produit() {
@@ -99,5 +107,14 @@ public class Produit {
 		this.quantite = quantite;
 	}
 
+	public Categorie getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
+	}
+	
+	
 	
 }
