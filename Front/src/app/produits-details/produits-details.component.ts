@@ -20,7 +20,7 @@ export class ProduitsDetailsComponent implements OnInit {
   constructor(public rest: ProduitsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.rest.getProduct(this.route.snapshot.params['this.idProduit']).
+    this.rest.getProduct(this.route.snapshot.params['id']).
     subscribe((data: {}) => {
       console.log(data);
       this.details = data;

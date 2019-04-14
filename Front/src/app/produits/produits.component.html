@@ -1,4 +1,4 @@
-<h2>DECOUVREZ VOS PRODUITS</h2>
+<h2>DECOUVREZ NOS PRODUIT</h2>
 <hr>
 
 <div class="row">
@@ -22,10 +22,20 @@
                 <li class="fa fa-star disable"></li>
             </ul>
             <div class="product-content">
-                <h3 class="title"><a href="#">{{item.designation}}</a></h3>
+                <h3 class="title"><a href="#">{{item.description}}</a></h3>
                 <div class="price">
                     <h4>{{item.prix}} €</h4>
                 </div>
             </div>
         </div>
     </div>
+
+    <!--<div class="card" *ngFor="let item of produits">-->
+    <!--<a routerLink="/produits/{{item.idProduit}}" href=""><img class="card-img-top" src={{item.photo}} alt="Card image cap"></a>-->
+    <!--<div class="card-body">-->
+    <!--<h5 class="card-title">{{item.designation}}</h5>-->
+    <!--<p class="card-text">{{item.description}}</p>-->
+    <!--<a routerLink="/cart" href="#" class="btn btn-danger">Ajouter au panier</a>-->
+    <!--<h4>{{item.prix}} €</h4>->-->
+    <!--</div>-->
+    <!--</div>-->

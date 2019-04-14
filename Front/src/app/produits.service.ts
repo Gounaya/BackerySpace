@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map, catchError, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProduitsService {
 
-  public host = 'http://localhost:8886';
+  public host = 'http://localhost:8887';
 
   constructor(private http: HttpClient) { }
   private extractData(res: Response) {
@@ -23,12 +23,26 @@ export class ProduitsService {
     return this.http.get(this.host + '/produits');
   }
 
+getCartProduct() {
+
+  return this.http.get(this.host + '/cart');
+
+
+}
+
+
+  getProduitHero() {
+
+    return this.http.get(this.host + '/produitHero');
+  }
+
   /**
    * Cette methode appelle les ressources de l'API par Id de produit
    */
 
   getProduct(id): Observable<any> {
-    return this.http.get(this.host + '/produits/' + id).pipe(
+    return this.http.get(this.host + '/produits/' + id)
+    .pipe(
       map(this.extractData));
   }
 
