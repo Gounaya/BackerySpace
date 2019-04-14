@@ -19,10 +19,6 @@ import { LoginComponent } from './login/login.component';
   declarations: [
     AppComponent,
     NavComponent,
-<<<<<<< HEAD
-    ProduitsComponent
-
-=======
     ProduitsComponent,
     FooterComponent,
     CartComponent,
