@@ -10,10 +10,11 @@ a.logo {
 
 a.logo:link {
     text-decoration: none;
+
 }
 
 .navbar-nav {
-    margin-left: 70%;
+    margin-left: 60%;
 }
 
 .nav-item {
