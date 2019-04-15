@@ -14,7 +14,7 @@ export class ProduitsComponent implements OnInit {
  */
   constructor(private produitService: ProduitsService) { }
 
-  produits: any;
+  produits: Produits;
   @Input()quantity=0;
 
 /**
@@ -22,6 +22,7 @@ export class ProduitsComponent implements OnInit {
  */
   ngOnInit() {
 this.produitService.getAllProduits()
+.pipe()
 .subscribe(produits =>  {
   this.produits = produits;
 }, err => {

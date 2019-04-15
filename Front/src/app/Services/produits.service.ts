@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Produits } from '../models/Produits';
 
 @Injectable({
   providedIn: 'root'
@@ -20,12 +21,12 @@ export class ProduitsService {
    * Cette methode appelle l'API et recupere tous les produits
    */
   getAllProduits() {
-    return this.http.get(this.host + '/produits');
+    return this.http.get<Produits>(this.host + '/produits');
   }
 
   getProduitHero() {
 
-    return this.http.get(this.host + '/produitHero');
+    return this.http.get<Produits>(this.host + '/produitHero');
   }
 
   /**
