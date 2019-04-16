@@ -16,4 +16,8 @@ public interface CartService {
     void removeAll();
 
     double getTotal();
+
+    void addProduitWithQuantity(Produit produit, int qte);
+
+    void updateProduit(Produit produit, int qte);
 }

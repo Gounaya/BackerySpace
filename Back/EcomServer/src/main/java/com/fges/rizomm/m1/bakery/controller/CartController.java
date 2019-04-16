@@ -31,24 +31,6 @@ public class CartController {
 
 
     @SuppressWarnings("Duplicates")
-    @PostMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Map<Produit,Integer>> addProduitCart(@PathVariable Long id){
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type", "application/json");
-
-        Produit Produit = produitService.find(id).orElse(null);
-
-        if(Produit == null){
-            return new ResponseEntity<>(headers, HttpStatus.NOT_FOUND);
-        }
-
-        cartService.addProduit(Produit);
-        Map<Produit,Integer> cart = cartService.getProduitsInCart();
-        return new ResponseEntity<>(cart, HttpStatus.OK);
-    }
-
-    @SuppressWarnings("Duplicates")
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Map<Produit, Integer>> findCart(){
 
@@ -93,5 +75,42 @@ public class CartController {
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @SuppressWarnings("Duplicates")
+    @PostMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Map<Produit,Integer>> addProduitWithQuantityCart(@PathVariable("id") Long id, @RequestParam("qte") int qte){
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json");
+
+        Produit Produit = produitService.find(id).orElse(null);
+
+        if(Produit == null){
+            return new ResponseEntity<>(headers, HttpStatus.NOT_FOUND);
+        }
+
+        cartService.addProduitWithQuantity(Produit, qte);
+        Map<Produit,Integer> cart = cartService.getProduitsInCart();
+        return new ResponseEntity<>(cart, HttpStatus.OK);
+    }
+
+    @SuppressWarnings("Duplicates")
+    @PutMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Map<Produit,Integer>> UpdateQuantityCart(@PathVariable("id") Long id, @RequestParam("qte") int qte){
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json");
+
+        Produit Produit = produitService.find(id).orElse(null);
+
+        if(Produit == null){
+            return new ResponseEntity<>(headers, HttpStatus.NOT_FOUND);
+        }
+
+        cartService.updateProduit(Produit, qte);
+        Map<Produit,Integer> cart = cartService.getProduitsInCart();
+        return new ResponseEntity<>(cart, HttpStatus.OK);
+    }
+
 
 }
