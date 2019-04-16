@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   title = 'Client';
 
   ngOnInit(){
-    this.http.get('http://127.0.0.1:8886/produitHero').subscribe(data => {
+    this.http.get('http://127.0.0.1:8888/produitHero').subscribe(data => {
       this.data = data;
     })
 

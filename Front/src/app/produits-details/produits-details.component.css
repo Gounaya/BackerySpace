@@ -29,3 +29,31 @@ div h6 {
 div h5 {
     font-weight: 100;
 }
+h6 {
+    
+    text-align: center;
+    
+}
+h4 {
+   
+    text-align: center;
+    
+}
+h5 {
+   
+    text-align: center;
+    padding-left: 50%;
+    
+}
+.card{
+    height: 600px;
+    width: 500px;
+    align-items: center;
+    
+    }
+    .card-img{
+        margin-left: 0%;
+        height:400px;
+    width: 500px;
+    
+    }
