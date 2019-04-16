@@ -17,27 +17,20 @@ import com.fges.rizomm.m1.bakery.entites.User;
 public class UserServiceImp implements UserService {
 
 	@Autowired
-	BCryptPasswordEncoder encoder;
-	
+	private UserRepository userRepository;
+
 	@Autowired
-	RoleRepository roleRepository;
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
-	@Autowired
-	UserRepository userRepository;
-	
+
 	@Override
-	public void saveUser(User user) {
-		  user.setPassword(encoder.encode(user.getPassword()));
-		  user.setStatus("VERIFIED");
-		  Role userRole = roleRepository.findByRole("SITE_USER");
-		  user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
-		  userRepository.save(user);
+	public void save(User user) {
+		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+		userRepository.save(user);
 	}
 
 	@Override
-	public Boolean isUserAlreadyPresent(User user) {
-		// from website
-		return null;
+	public User findByUsername(String username) {
+		return userRepository.findByUsername(username);
 	}
-
 }
