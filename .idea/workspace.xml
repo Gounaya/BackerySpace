@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="224c2719-d577-4ee6-9c5c-fc7b6661a1f3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Back/EcomServer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Back/EcomServer/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/home/home.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/nav/nav.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/nav/nav.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/nav/nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/nav/nav.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/nav/nav.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/nav/nav.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/produits-details/produits-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/produits-details/produits-details.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/produits-details/produits-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/produits-details/produits-details.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/produits.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/produits.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/produits.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/produits/produits.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/produits/produits.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/produits/produits.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/produits/produits.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,11 +14,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Front/src/app/app-routing.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="150">
               <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
@@ -97,7 +81,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -148,6 +131,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -185,23 +169,19 @@
       <option name="presentableId" value="Default" />
       <updated>1555059065316</updated>
       <workItem from="1555059067714" duration="958000" />
+      <workItem from="1555343352050" duration="301000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="958000" />
+    <option name="totallyTimeSpent" value="1259000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="203" width="1440" height="835" extended-state="0" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="TypeScript" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -209,6 +189,11 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -218,18 +203,9 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Front/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Front/src/app/app-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="150">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
@@ -247,6 +223,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
