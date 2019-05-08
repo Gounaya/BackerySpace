@@ -1,7 +1,7 @@
 package com.fges.rizomm.m1.bakery.entites;
 
 
-import org.springframework.context.annotation.Scope;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,6 +24,7 @@ public class Produit {
 	@NotEmpty
 	@Size(min=4, max=15)
 	private String designation;
+
 	@Size(min=4, max=255)
 	private String description;
 	private double prix;
@@ -114,7 +115,5 @@ public class Produit {
 	public void setCategorie(Categorie categorie) {
 		this.categorie = categorie;
 	}
-	
-	
-	
+
 }

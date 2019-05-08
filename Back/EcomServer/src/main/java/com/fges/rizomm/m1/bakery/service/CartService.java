@@ -1,9 +1,11 @@
 package com.fges.rizomm.m1.bakery.service;
 
 import com.fges.rizomm.m1.bakery.entites.Produit;
+import com.fges.rizomm.m1.bakery.entites.ProduitPanier;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 public interface CartService {
 
@@ -20,4 +22,7 @@ public interface CartService {
     void addProduitWithQuantity(Produit produit, int qte);
 
     void updateProduit(Produit produit, int qte);
+
+    ArrayList<ProduitPanier> convertMapToList();
+
 }

@@ -2,13 +2,14 @@ package com.fges.rizomm.m1.bakery.service;
 
 
 import com.fges.rizomm.m1.bakery.entites.Produit;
+import com.fges.rizomm.m1.bakery.entites.ProduitPanier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.WebApplicationContext;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -52,7 +53,7 @@ public class CartServiceImpl implements CartService {
 
         for (Map.Entry<Produit, Integer> e : produits.entrySet()) {
             if (e.getKey().getIdProduit() == produit.getIdProduit()) {
-                    produits.remove(e.getKey());
+                produits.remove(e.getKey());
             }
         }
     }
@@ -69,7 +70,7 @@ public class CartServiceImpl implements CartService {
                 e.setValue(qte);
                 if(e.getValue() > 1)
                 {
-                   return;
+                    return;
 
                 } else if(e.getValue() <= 0)
                 {
@@ -96,6 +97,13 @@ public class CartServiceImpl implements CartService {
         return totalPrice;
     }
 
-
-
+    public ArrayList<ProduitPanier> convertMapToList()
+    {
+        ArrayList<ProduitPanier> list = new ArrayList<ProduitPanier>();
+        for (Map.Entry<Produit, Integer> produit : produits.entrySet()) {
+            ProduitPanier pp = new ProduitPanier(produit.getKey(), produit.getValue());
+            list.add(pp);
+        }
+        return list;
+    }
 }
