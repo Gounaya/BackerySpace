@@ -9,9 +9,7 @@ import com.fges.rizomm.m1.bakery.dao.ProduitRepository;
 
 @SpringBootApplication
 public class DemoSpringLoginApplication {
-	
-	@Autowired
-	private ProduitRepository pr;
+
 	
 	public static void main(String[] args) {
 		SpringApplication.run(DemoSpringLoginApplication.class, args);

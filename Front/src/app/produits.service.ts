@@ -8,7 +8,11 @@ import { map, catchError, tap } from 'rxjs/operators';
 })
 export class ProduitsService {
 
+<<<<<<< HEAD
   public host = 'http://backery-space.herokuapp.com';
+=======
+  public host = 'http://localhost:8888';
+>>>>>>> redhaTest
 
   constructor(private http: HttpClient) { }
   private extractData(res: Response) {

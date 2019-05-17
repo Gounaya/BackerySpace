@@ -10,9 +10,47 @@ div {
 h1 {
     font-weight: bold;
     text-align: center;
+<<<<<<< HEAD
+=======
+
+}
+
+h6 {
+    
+    text-align: center;
+    
+}
+h4 {
+   
+    text-align: center;
+    
+}
+h5 {
+   
+    text-align: center;
+    padding-left: 50%;
+}
+
+.card{
+height: 600px;
+width: 500px;
+align-items: center;
+
+
+>>>>>>> redhaTest
 }
 
 button {
     border-radius: 90px;
     color: rgba(56, 9, 9, 0.76)!important
+<<<<<<< HEAD
+=======
+}
+
+.card-img{
+    margin-left: 0%;
+    height:400px;
+width: 500px;
+
+>>>>>>> redhaTest
 }

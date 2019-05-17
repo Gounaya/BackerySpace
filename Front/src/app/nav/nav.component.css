@@ -10,6 +10,7 @@ a.logo {
 
 a.logo:link {
     text-decoration: none;
+<<<<<<< HEAD
 }
 
 .navbar-nav {
@@ -19,4 +20,20 @@ a.logo:link {
 .nav-item {
     margin-right: 10px;
     font-family: 'Anton', sans-serif;
+=======
+
+}
+
+.navbar-nav {
+    margin-left: 60%;
+}
+
+.nav-item {
+    margin-right: 10px;
+    font-family: 'Anton', sans-serif;
+}
+
+hr {
+    padding-top: 5px;
+>>>>>>> redhaTest
 }

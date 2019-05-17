@@ -27,6 +27,7 @@ public class LigneCommande {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
 	public LigneCommande(int quantite, double prix) {
 		super();
 		this.quantite = quantite;

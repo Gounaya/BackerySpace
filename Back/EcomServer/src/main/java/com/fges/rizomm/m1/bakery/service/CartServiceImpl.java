@@ -1,14 +1,15 @@
 package com.fges.rizomm.m1.bakery.service;
 
-import com.fges.rizomm.m1.bakery.dao.ProduitRepository;
+
 import com.fges.rizomm.m1.bakery.entites.Produit;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.fges.rizomm.m1.bakery.entites.ProduitPanier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.WebApplicationContext;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,46 +19,77 @@ import java.util.Map;
 @Transactional
 public class CartServiceImpl implements CartService {
 
-    private final ProduitRepository produitRepository;
-
     private Map<Produit, Integer> produits = new HashMap<>();
-
-    @Autowired
-    public CartServiceImpl(ProduitRepository produitRepository) {
-        this.produitRepository = produitRepository;
-    }
 
     @Override
     public void addProduit(Produit produit) {
 
-        if (this.produits.containsKey(produit)) {
-            this.produits.replace(produit, this.produits.get(produit) + 1);
-        } else {
-            this.produits.put(produit, 1);
+        for (Map.Entry<Produit, Integer> e : produits.entrySet()) {
+            if (e.getKey().getIdProduit() == produit.getIdProduit()) {
+                e.setValue(e.getValue()+1);
+                return;
+            }
         }
+        produits.put(produit, 1);
     }
+
+
+    @Override
+    public void addProduitWithQuantity(Produit produit, int qte) {
+
+        for (Map.Entry<Produit, Integer> e : produits.entrySet()) {
+            if (e.getKey().getIdProduit() == produit.getIdProduit()) {
+                e.setValue(e.getValue() + qte);
+                return;
+            }
+        }
+        produits.put(produit, qte);
+
+    }
+
 
     @Override
     public void removeProduit(Produit produit) {
 
-        if (this.produits.containsKey(produit)) {
-            if (this.produits.get(produit) > 1)
-                this.produits.replace(produit, this.produits.get(produit) - 1);
-            else if (this.produits.get(produit) == 1) {
-                this.produits.remove(produit);
+        for (Map.Entry<Produit, Integer> e : produits.entrySet()) {
+            if (e.getKey().getIdProduit() == produit.getIdProduit()) {
+                produits.remove(e.getKey());
             }
         }
     }
 
     @Override
+    public void removeAll() {
+        produits.clear();
+    }
+
+    @Override
+    public void updateProduit(Produit produit, int qte) {
+        for (Map.Entry<Produit, Integer> e : produits.entrySet()) {
+            if (e.getKey().getIdProduit() == produit.getIdProduit()) {
+                e.setValue(qte);
+                if(e.getValue() > 1)
+                {
+                    return;
+
+                } else if(e.getValue() <= 0)
+                {
+                    produits.remove(e.getKey());
+                }
+            }
+        }
+    }
+
+
+    @Override
     public Map<Produit, Integer> getProduitsInCart() {
-        return Collections.unmodifiableMap(this.produits);
+        return Collections.unmodifiableMap(produits);
     }
 
     @Override
     public double getTotal() {
         double totalPrice = 0;
-        if(this.produits.size() > 0 && this.produits != null){
+        if(produits.size() > 0 && produits != null){
             for (Map.Entry<Produit, Integer> pair : produits.entrySet()) {
                 totalPrice = totalPrice + pair.getKey().getPrix();
             }
@@ -65,5 +97,13 @@ public class CartServiceImpl implements CartService {
         return totalPrice;
     }
 
-
+    public ArrayList<ProduitPanier> convertMapToList()
+    {
+        ArrayList<ProduitPanier> list = new ArrayList<ProduitPanier>();
+        for (Map.Entry<Produit, Integer> produit : produits.entrySet()) {
+            ProduitPanier pp = new ProduitPanier(produit.getKey(), produit.getValue());
+            list.add(pp);
+        }
+        return list;
+    }
 }
