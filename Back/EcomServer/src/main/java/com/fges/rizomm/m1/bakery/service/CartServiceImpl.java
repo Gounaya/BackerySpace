@@ -2,13 +2,14 @@ package com.fges.rizomm.m1.bakery.service;
 
 
 import com.fges.rizomm.m1.bakery.entites.Produit;
+import com.fges.rizomm.m1.bakery.entites.ProduitPanier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.WebApplicationContext;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,20 +34,48 @@ public class CartServiceImpl implements CartService {
     }
 
 
+    @Override
+    public void addProduitWithQuantity(Produit produit, int qte) {
+
+        for (Map.Entry<Produit, Integer> e : produits.entrySet()) {
+            if (e.getKey().getIdProduit() == produit.getIdProduit()) {
+                e.setValue(e.getValue() + qte);
+                return;
+            }
+        }
+        produits.put(produit, qte);
+
+    }
+
 
     @Override
     public void removeProduit(Produit produit) {
 
         for (Map.Entry<Produit, Integer> e : produits.entrySet()) {
             if (e.getKey().getIdProduit() == produit.getIdProduit()) {
+                produits.remove(e.getKey());
+            }
+        }
+    }
+
+    @Override
+    public void removeAll() {
+        produits.clear();
+    }
+
+    @Override
+    public void updateProduit(Produit produit, int qte) {
+        for (Map.Entry<Produit, Integer> e : produits.entrySet()) {
+            if (e.getKey().getIdProduit() == produit.getIdProduit()) {
+                e.setValue(qte);
                 if(e.getValue() > 1)
                 {
-                   e.setValue(e.getValue()-1);
-                } else if(e.getValue() == 1)
+                    return;
+
+                } else if(e.getValue() <= 0)
                 {
                     produits.remove(e.getKey());
                 }
-                return;
             }
         }
     }
@@ -55,11 +84,6 @@ public class CartServiceImpl implements CartService {
     @Override
     public Map<Produit, Integer> getProduitsInCart() {
         return Collections.unmodifiableMap(produits);
-    }
-
-    @Override
-    public void removeAll() {
-        produits.clear();
     }
 
     @Override
@@ -73,5 +97,13 @@ public class CartServiceImpl implements CartService {
         return totalPrice;
     }
 
-
+    public ArrayList<ProduitPanier> convertMapToList()
+    {
+        ArrayList<ProduitPanier> list = new ArrayList<ProduitPanier>();
+        for (Map.Entry<Produit, Integer> produit : produits.entrySet()) {
+            ProduitPanier pp = new ProduitPanier(produit.getKey(), produit.getValue());
+            list.add(pp);
+        }
+        return list;
+    }
 }

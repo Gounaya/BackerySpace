@@ -14,40 +14,38 @@ export class HomeComponent implements OnInit {
   title = 'Client';
 
 
-  constructor(  private breadService:ProduitsService){
+  constructor(  private breadService: ProduitsService, private fishservice: ProduitfishService, private mealservice: ProduitmealService ) {
   }
   fish: any;
-  meal:any;
-  produit: any
+  meal: any;
+  produit: any;
 
 
   ngOnInit() {
+    
 
     // this.http.get('http://127.0.0.1:8887/produitHero').subscribe(data => {
     //   console.log(data);
     //   this.data = data;
 
+      this.fishservice.getProductHeroFish()
+      .subscribe(reponse1 => {
+        this.fish = reponse1 ; } );
 
-// this.fishservice.getProductHeroFish()
-// .subscribe(reponse1=>{
-//   this.fish=reponse1});
-
-  //  this.mealservice.getMealHero()
-
-  // .subscribe(reponse2 => {
-  //   this.meal = reponse2;
-  // });
-
-  this.breadService.getProduitHero()
-    .subscribe(reponse3=>{
-      this.produit = reponse3;
-    })
-  }
+      this.mealservice.getMealHero()
 
 
-  }
+        .subscribe(reponse2 => {
+          this.meal = reponse2;
+        });
 
-
+      this.breadService.getProduitHero()
+          .subscribe(reponse3 => {
+            this.produit = reponse3;
+          });
+          
+        }
+        }
 
 
     // this.http.get('http://51.15.226.50:8080/api/products/productHero').subscribe(boucher =>{

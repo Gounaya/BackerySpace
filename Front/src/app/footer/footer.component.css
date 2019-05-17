@@ -1,12 +1,22 @@
-.mdb-color {
+/* .mdb-color {
     background-color: #5c2e00!important;
-}
+} */
 
 .list-unstyled {
     margin-left: 40%;
 }
 
 li {
-    color: white;
+    color: #5c2e00!important;
+    text-decoration: none;
+}
+
+h5 {
+    color: #5c2e00;
+    text-decoration: none;
+}
+
+p {
+    color: #5c2e00;
     text-decoration: none;
 }
