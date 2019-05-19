@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProduitsService } from './../produits.service';
 import { ActivatedRoute, Router } from '@angular/router';
-<<<<<<< HEAD
 import { Produits } from '../models/Produits';
-=======
->>>>>>> redhaTest
 
 
 @Component({
@@ -23,11 +20,7 @@ export class ProduitsDetailsComponent implements OnInit {
   constructor(public rest: ProduitsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-<<<<<<< HEAD
-    this.rest.getProduct(this.route.snapshot.params['this.idProduit']).
-=======
     this.rest.getProduct(this.route.snapshot.params['id']).
->>>>>>> redhaTest
     subscribe((data: {}) => {
       console.log(data);
       this.details = data;

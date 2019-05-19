@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
+import { ProduitfishService } from '../produitfish.service';
+import { ProduitmealService } from '../produitmeal.service';
+import { ProduitsService } from '../produits.service';
 
 @Component({
   selector: 'app-home',
@@ -8,23 +11,48 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  @Input() data : any;
-  constructor( private http: HttpClient){
-    console.log('uuuu');
-    this.ngOnInit();
-  }
   title = 'Client';
 
-  ngOnInit(){
-<<<<<<< HEAD
-    this.http.get('http://127.0.0.1:8886/produitHero').subscribe(data => {
-=======
-    this.http.get('http://127.0.0.1:8888/produitHero').subscribe(data => {
->>>>>>> redhaTest
-      this.data = data;
-    })
 
+  constructor(  private breadService: ProduitsService, private fishservice: ProduitfishService, private mealservice: ProduitmealService ) {
   }
+  fish: any;
+  meal: any;
+  produit: any;
 
-}
+
+  ngOnInit() {
+    
+
+    // this.http.get('http://127.0.0.1:8887/produitHero').subscribe(data => {
+    //   console.log(data);
+    //   this.data = data;
+
+      this.fishservice.getProductHeroFish()
+      .subscribe(reponse1 => {
+        this.fish = reponse1 ; } );
+
+      this.mealservice.getMealHero()
+
+
+        .subscribe(reponse2 => {
+          this.meal = reponse2;
+        });
+
+      this.breadService.getProduitHero()
+          .subscribe(reponse3 => {
+            this.produit = reponse3;
+          });
+          
+        }
+        }
+
+
+    // this.http.get('http://51.15.226.50:8080/api/products/productHero').subscribe(boucher =>{
+    //   console.log(boucher);
+    // this.meal = boucher;
+
+
+
+
+

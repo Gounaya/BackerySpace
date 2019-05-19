@@ -1,5 +1,11 @@
 .bg-dark {
-    background-color: rgba(56, 9, 9, 0.76)!important;
+    /* background: #000428; */
+    /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #004e92, #000428); */
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to right, #004e92, #000428); */
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #5c2e00!important;
 }
 
 a.logo {
@@ -10,18 +16,6 @@ a.logo {
 
 a.logo:link {
     text-decoration: none;
-<<<<<<< HEAD
-}
-
-.navbar-nav {
-    margin-left: 70%;
-}
-
-.nav-item {
-    margin-right: 10px;
-    font-family: 'Anton', sans-serif;
-=======
-
 }
 
 .navbar-nav {
@@ -33,7 +27,7 @@ a.logo:link {
     font-family: 'Anton', sans-serif;
 }
 
-hr {
-    padding-top: 5px;
->>>>>>> redhaTest
+img {
+    height: 120px;
+    width: 300px;
 }

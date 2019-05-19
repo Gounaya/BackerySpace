@@ -16,7 +16,7 @@ export class CartComponent implements OnInit {
  * Recuperation des ressources depuis l'API pour affichage
  */
   ngOnInit() {
-this.produitService.getAllProduits()
+this.produitService.getCartProduct()
 .subscribe(produits =>  {
   this.produits = produits;
 }, err => {

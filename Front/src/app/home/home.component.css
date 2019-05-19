@@ -1,5 +1,14 @@
 div {
     width: 100%;
+    font-family: 'Anton', sans-serif;
+}
+
+img {
+    height: 600px;
+    width: 20%;
+    border-radius: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .list-inline-item:not(:last-child) {
@@ -7,50 +16,33 @@ div {
     width: 100%;
 }
 
-h1 {
+h2 {
     font-weight: bold;
     text-align: center;
-<<<<<<< HEAD
-=======
-
-}
-
-h6 {
-    
-    text-align: center;
-    
-}
-h4 {
-   
-    text-align: center;
-    
-}
-h5 {
-   
-    text-align: center;
-    padding-left: 50%;
-}
-
-.card{
-height: 600px;
-width: 500px;
-align-items: center;
-
-
->>>>>>> redhaTest
+    font-family: 'Anton', sans-serif;
+    color: rgba(56, 9, 9, 0.76)!important
 }
 
 button {
     border-radius: 90px;
     color: rgba(56, 9, 9, 0.76)!important
-<<<<<<< HEAD
-=======
 }
 
-.card-img{
-    margin-left: 0%;
-    height:400px;
-width: 500px;
+h5 {
+    text-align: center;
+}
 
->>>>>>> redhaTest
+h4 {
+    padding-bottom: 12px;
+}
+
+h6 {
+    color: red;
+    text-align: center
+}
+
+hr {
+    border-style: solid;
+    margin-bottom: 40px;
+    color: rgba(56, 9, 9, 0.76)!important
 }

@@ -14,13 +14,15 @@
 
             </td>
             <td>price</td>
-            <td>qte</td>
+            <td>qte
+                <h1>{{produits.description}}</h1>
+            </td>
             <td>
                 <div class="col-md-3 col-sm-6" *ngFor="let item of produits">
                     <div class="product-grid">
                         <div class="product-image">
                             <a routerLink="/produits/{{item.idProduit}}">
-
+                                <h1>{{produits.description}}</h1>
                                 <img src={{item.photo}}>
 
                             </a>

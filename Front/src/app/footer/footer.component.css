@@ -1,13 +1,22 @@
-.mdb-color{
-    background-color: rgba(56, 9, 9, 0.76)!important;
+/* .mdb-color {
+    background-color: #5c2e00!important;
+} */
 
-}
-
-.list-unstyled{
+.list-unstyled {
     margin-left: 40%;
-
 }
-li{
-    color: white;
- text-decoration: none;
+
+li {
+    color: #5c2e00!important;
+    text-decoration: none;
+}
+
+h5 {
+    color: #5c2e00;
+    text-decoration: none;
+}
+
+p {
+    color: #5c2e00;
+    text-decoration: none;
 }
