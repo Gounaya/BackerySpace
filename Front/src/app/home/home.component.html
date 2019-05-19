@@ -8,7 +8,7 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <h6>VOS PRODUITS DU MOIS </h6>
+            <h6>VOTRE PRODUIT DU MOIS </h6>
 
             <img class="d-block w-100" src={{produit.photo}} alt="First slide">
             <h4 class="card-title"><strong>{{produit.designation}}</strong></h4>
@@ -16,21 +16,23 @@
         </div>
 
         <div class="carousel-item">
-            <h6>VOS PRODUITS DU MOIS</h6>
+            <h6>POISSON DU MOIS</h6>
 
-            <img class="d-block w-100" src={{produit.photo}} alt="First slide">
-            <h4 class="card-title"><strong>{{produit.designation}}</strong></h4>
-            <h5 class="indigo-text"><strong>{{produit.prix}} €</strong></h5>
+            <img class="d-block w-100" src={{fish.imageUrl}} alt="Second slide">
+            <h4 class="card-title"><strong>{{fish.name}}</strong></h4>
+
+            <h5 class="indigo-text"><strong>{{fish.price}} €</strong></h5>
 
         </div>
 
         <div class="carousel-item">
-            <h6>VOS PRODUITS DU MOIS</h6>
+            <h6>VIANDE DU MOIS</h6>
 
-            <img class="d-block w-100" src={{produit.photo}} alt="Second slide">
+            <img class="d-block w-100" src={{meal.pictureUrl}} alt="Second slide">
             <h4 class="card-title"><strong>{{meal.name}}</strong></h4>
 
             <h5 class="indigo-text"><strong>{{meal.price}} €</strong></h5>
+
 
         </div>
 

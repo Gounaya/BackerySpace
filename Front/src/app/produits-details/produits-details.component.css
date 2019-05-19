@@ -16,6 +16,7 @@ a {
     color: rgba(236, 15, 15, 0.76);
     font-weight: bold;
     text-align: center;
+    margin-left: 18vh
 }
 
 .btn:active {
@@ -28,4 +29,5 @@ div h6 {
 
 div h5 {
     font-weight: 100;
+    text-align: center;
 }

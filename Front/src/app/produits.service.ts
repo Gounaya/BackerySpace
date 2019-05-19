@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class ProduitsService {
 
-  public host = 'http://localhost:8887';
+  public host = 'https://backery-space.herokuapp.com';
 
   constructor(private http: HttpClient) { }
   private extractData(res: Response) {
